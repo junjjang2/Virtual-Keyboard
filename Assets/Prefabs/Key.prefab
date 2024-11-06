@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5201824358746623117}
   - component: {fileID: 7827673734625106789}
   - component: {fileID: 632878374077555386}
+  - component: {fileID: 1149504151847765682}
   m_Layer: 5
   m_Name: Key
   m_TagString: Untagged
@@ -82,6 +83,7 @@ MonoBehaviour:
   consonant: {fileID: 6070921034883589376}
   fortis: {fileID: 2036731808937460240}
   aspirated: {fileID: 420919944636115622}
+  currentType: 0
 --- !u!114 &632878374077555386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,10 +97,110 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   consonant: {fileID: 7827673734625106789}
+  currentVowel: 0
+  currentVowelType: 0
   Ah: {fileID: 2452320340155904468}
   Oh: {fileID: 5842298220579242638}
   Oo: {fileID: 10707973611199413}
   Uh: {fileID: 5407418175090450392}
+  image: {fileID: 2689102187317450827}
+  currentWord: 547
+--- !u!114 &1149504151847765682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361176160968304168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 1
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 632878374077555386}
+        m_TargetAssemblyTypeName: WordText, Assembly-CSharp
+        m_MethodName: SelectThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 632878374077555386}
+        m_TargetAssemblyTypeName: WordText, Assembly-CSharp
+        m_MethodName: DeselectThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
 --- !u!1 &3271802976848737394
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,10 +686,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3156507027810647622}
     m_Modifications:
-    - target: {fileID: 1974231692185627047, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
-      propertyPath: m_text
-      value: "\uAC00"
-      objectReference: {fileID: 0}
     - target: {fileID: 5343230727699753615, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
       propertyPath: m_Name
       value: "Key  - \u314F"
@@ -676,22 +774,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7670830791800935660, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7670830791800935660, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
-      propertyPath: m_Color.b
-      value: 0.5424528
-      objectReference: {fileID: 0}
-    - target: {fileID: 7670830791800935660, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9870253
-      objectReference: {fileID: 0}
-    - target: {fileID: 7670830791800935660, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -721,9 +803,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3156507027810647622}
     m_Modifications:
+    - target: {fileID: 1748132594811135653, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
+      propertyPath: m_text
+      value: "\u315B"
+      objectReference: {fileID: 0}
     - target: {fileID: 1974231692185627047, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
       propertyPath: m_text
-      value: "\uACE0"
+      value: "\u3157"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134384804816853026, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
+      propertyPath: m_text
+      value: "\u315A"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551209456892255886, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5343230727699753615, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
       propertyPath: m_Name
@@ -858,9 +952,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3156507027810647622}
     m_Modifications:
+    - target: {fileID: 1748132594811135653, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
+      propertyPath: m_text
+      value: "\u3160"
+      objectReference: {fileID: 0}
     - target: {fileID: 1974231692185627047, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
       propertyPath: m_text
-      value: "\uACE0"
+      value: "\u315C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134384804816853026, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
+      propertyPath: m_text
+      value: "\u315F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551209456892255886, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5343230727699753615, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
       propertyPath: m_Name
@@ -950,22 +1056,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7670830791800935660, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7670830791800935660, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
-      propertyPath: m_Color.b
-      value: 0.5424528
-      objectReference: {fileID: 0}
-    - target: {fileID: 7670830791800935660, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9870253
-      objectReference: {fileID: 0}
-    - target: {fileID: 7670830791800935660, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -995,9 +1085,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3156507027810647622}
     m_Modifications:
+    - target: {fileID: 1748132594811135653, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
+      propertyPath: m_text
+      value: "\u3155"
+      objectReference: {fileID: 0}
     - target: {fileID: 1974231692185627047, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
       propertyPath: m_text
-      value: "\uAC70"
+      value: "\u3153"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134384804816853026, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
+      propertyPath: m_text
+      value: "\u3154"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551209456892255886, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
+      propertyPath: m_text
+      value: "\u3156"
       objectReference: {fileID: 0}
     - target: {fileID: 5343230727699753615, guid: 58e3cd040902ab54bab82d05695193f0, type: 3}
       propertyPath: m_Name

@@ -63,7 +63,7 @@
                     "name": "Right Prim",
                     "type": "Button",
                     "id": "381bf256-b794-481d-9556-d46eb5246773",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -265,7 +265,7 @@
                     "name": "Shift",
                     "type": "Button",
                     "id": "f0a122c2-f0e4-409e-827b-bc024f26c59f",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -292,7 +292,7 @@
                     "name": "line",
                     "type": "Button",
                     "id": "7ddd93ca-2c07-472e-88ff-b8b3a19bbcda",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -301,7 +301,16 @@
                     "name": "yi",
                     "type": "Button",
                     "id": "8cfda3a5-3d49-45bc-b97b-f209e2b91667",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Tab",
+                    "type": "Button",
+                    "id": "4d610014-067d-452f-9cf1-2cd3815e8333",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -404,6 +413,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "yi",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7864c373-8c10-4d46-85a1-c728a4cfe868",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PC",
+                    "action": "Tab",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

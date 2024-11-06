@@ -16,6 +16,26 @@ public class ConsonantText : MonoBehaviour
     public TMP_Text consonant;
     public TMP_Text fortis;
     public TMP_Text aspirated;
+
+    public ConsonantType currentType;
+
+    public char CurrentText
+    {
+        get
+        {
+            switch (currentType)
+            {
+                case ConsonantType.Consonant:
+                    return consonant.text[0];
+                case ConsonantType.Fortis:
+                    return (fortis.text.Length > 0 ? fortis.text[0] : default);
+                case ConsonantType.Aspirated:
+                    return (aspirated.text.Length > 0 ? aspirated.text[0] : default);
+                default:
+                    return default;
+            }
+        }
+    } 
     
     public void SetConsonant(string consonant, string fortis, string aspirated)
     {
@@ -26,17 +46,13 @@ public class ConsonantText : MonoBehaviour
     
     public string GetConsonant(ConsonantType type)
     {
-        switch (type)
+        return type switch
         {
-            case ConsonantType.Consonant:
-                return consonant.text;
-            case ConsonantType.Fortis:
-                return fortis.text;
-            case ConsonantType.Aspirated:
-                return aspirated.text;
-        }
-        
-        return "";
+            ConsonantType.Consonant => consonant.text,
+            ConsonantType.Fortis => fortis.text,
+            ConsonantType.Aspirated => aspirated.text,
+            _ => ""
+        };
     }
     
     public void EnableConsonant(ConsonantType type)
@@ -46,7 +62,9 @@ public class ConsonantText : MonoBehaviour
         fortis.gameObject.SetActive(false);
         aspirated.gameObject.SetActive(false);
         
-        switch (type)
+        currentType = type;
+        
+        switch (currentType)
         {
             case ConsonantType.Consonant:
                 consonant.gameObject.SetActive(true);

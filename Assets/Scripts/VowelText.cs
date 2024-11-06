@@ -1,12 +1,15 @@
+using System;
 using TMPro;
 using UnityEngine;
 
+[Flags]
 public enum VowelType
 {
     Vowel,
     Line,
     Yi,
-	LineYi
+    
+	LineYi = Line | Yi
 }
 
 public class VowelText : MonoBehaviour
@@ -18,39 +21,36 @@ public class VowelText : MonoBehaviour
     
     public VowelType currentType;
 
-    public void SetVowel(string vowel, string line, string yi, string lineyi)
-    {
-        this.vowel.text = vowel;
-        this.line.text = line;
-        this.yi.text = yi;
-        this.lineyi.text = lineyi;
-        currentType = VowelType.Vowel;
-    }
+    // public void SetVowel(string vowel, string line, string yi, string lineyi)
+    // {
+    //     this.vowel.text = vowel;
+    //     this.line.text = line;
+    //     this.yi.text = yi;
+    //     this.lineyi.text = lineyi;
+    //     currentType = VowelType.Vowel;
+    // }
 
-	public string GetVowel(VowelType type)
+	private char GetVowel(VowelType type)
     {
-        switch (type)
+        return type switch
         {
-            case VowelType.Vowel:
-                return vowel.text;
-            case VowelType.Line:
-                return line.text;
-            case VowelType.Yi:
-                return yi.text;
-            case VowelType.LineYi:
-                return lineyi.text;
-        }
-
-        return "";
+            VowelType.Vowel => vowel.text[0],
+            VowelType.Line => (line.text.Length > 0 ? line.text[0] : default),
+            VowelType.Yi => (yi.text.Length > 0 ? yi.text[0] : default),
+            VowelType.LineYi => (lineyi.text.Length > 0 ? lineyi.text[0] : default),
+            _ => default
+        };
     }
     
-    public string GetCurrentVowel()
+    public char GetCurrentVowel()
     {
         return GetVowel(currentType);
     }
     
     public void SetVowelType(VowelType type)
     {
+        currentType = type;
+        
         // disable all
         vowel.gameObject.SetActive(false);
         line.gameObject.SetActive(false);
@@ -76,6 +76,7 @@ public class VowelText : MonoBehaviour
 
     public void DisableVowel()
     {
+        currentType = VowelType.Vowel;
         // disable all
         vowel.gameObject.SetActive(false);
         line.gameObject.SetActive(false);
