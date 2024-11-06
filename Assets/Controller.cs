@@ -60,6 +60,10 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         {
             words.ForEach(word => word.SelectVowel(VowelSelect.uh));
         }
+        else
+        {
+            words.ForEach(word => word.DisableAll());
+        }
     }
 
     public void OnLine(InputAction.CallbackContext context)

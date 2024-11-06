@@ -73,4 +73,13 @@ public class VowelText : MonoBehaviour
                 break;
         }
     }
+
+    public void DisableVowel()
+    {
+        // disable all
+        vowel.gameObject.SetActive(false);
+        line.gameObject.SetActive(false);
+        yi.gameObject.SetActive(false);
+        lineyi.gameObject.SetActive(false);
+    }
 }

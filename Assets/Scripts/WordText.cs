@@ -75,4 +75,12 @@ public class WordText : MonoBehaviour
         Oo.gameObject.SetActive(true);
         Uh.gameObject.SetActive(true);
     }
+
+    public void DisableAll()
+    {
+        Ah.gameObject.SetActive(false);
+        Oh.gameObject.SetActive(false);
+        Oo.gameObject.SetActive(false);
+        Uh.gameObject.SetActive(false);
+    }
 }

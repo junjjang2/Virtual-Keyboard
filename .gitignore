@@ -229,3 +229,6 @@ dist
 # ignore Twentyoz test Folder
 _test/
 _test.meta
+
+/[Aa]ssets/TextMesh Pro/*
+/[Aa]ssets/Fonts/*

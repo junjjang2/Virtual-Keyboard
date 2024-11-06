@@ -344,7 +344,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7b647012-15ff-4933-aec8-53ead070d505"",
-                    ""path"": ""<Mouse>/forwardButton"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -410,7 +410,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""698041d6-617c-4dcd-8bfb-5eaf5b3b4c1d"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""path"": ""<Mouse>/forwardButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -421,7 +421,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""dedf5184-1ab7-4211-9606-13208209ac89"",
-                    ""path"": ""<Keyboard>/o"",
+                    ""path"": ""<Mouse>/backButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
