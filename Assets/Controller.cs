@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,6 +22,8 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     public List<WordText> words;
     [SerializeField] public float deadZone = 0.2f;
     private VirtualKeyboard virtualKeyboard;
+    
+    [SerializeField] public TMP_Text virtualKeyboardView;
 
     public WordText selectedWord;
     
@@ -32,14 +35,17 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     
     int currentWordIndex = 0;
     
+    char currentWord = ' ';
+    
     public void Awake()
     {
         virtualKeyboard = new VirtualKeyboard();
         virtualKeyboard.EyeFlick.SetCallbacks(this);
         virtualKeyboard.Enable();
 
+        virtualKeyboardView.text = "";
         // if PC
-        words[currentWordIndex].SelectThis();
+        //words[currentWordIndex].SelectThis();
     }
 
     public void Update()
@@ -53,8 +59,11 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
 
         if (currentVowel == VowelSelect.None)
         {
-            if(isTriggered && !selectedWord.currentWord.Equals(' '))
-                Debug.Log(selectedWord.currentWord);
+            if (isTriggered && !selectedWord.currentWord.Equals(' '))
+            {
+                currentWord = selectedWord.currentWord;
+                virtualKeyboardView.text += currentWord;
+            }
             isTriggered = false;
         }
         
@@ -144,7 +153,7 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         }
         else if (context.canceled)
         {
-            currentVowelType &= ~VowelType.Line;
+            currentVowelType &= ~VowelType.Yi;
         }
     }
 
@@ -154,6 +163,23 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         {
             currentWordIndex = (currentWordIndex + 1) % words.Count;
             words[currentWordIndex].SelectThis();
+        }
+    }
+
+    public void OnSpace(InputAction.CallbackContext context)
+    {
+        Debug.Log(' ');
+        virtualKeyboardView.text += ' ';
+    }
+
+    public void OnSelect(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            // var tmp = virtualKeyboardView.text;
+            // var c = tmp[^1];
+            //
+            virtualKeyboardView.text += selectedWord.consonant.CurrentText;
         }
     }
 }

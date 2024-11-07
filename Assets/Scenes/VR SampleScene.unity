@@ -11553,6 +11553,17 @@ PrefabInstance:
       addedObject: {fileID: 1416212407}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
+--- !u!114 &1566125736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3661151298866594352, guid: 3e7c36516396c074d89492f599f715c5, type: 3}
+  m_PrefabInstance: {fileID: 1956390494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1573382093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7798696490737561623, guid: 2c1a76173c7e0144fbab968bd1968de1, type: 3}
@@ -12605,7 +12616,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 4.3e-44, z: 2.42e-43, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 3.4e-44, z: 4e-45, w: -0.000000023148461}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -13401,6 +13412,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1125567455928159977, guid: 3e7c36516396c074d89492f599f715c5, type: 3}
+      propertyPath: virtualKeyboardView
+      value: 
+      objectReference: {fileID: 1566125736}
     - target: {fileID: 1138076563029923560, guid: 3e7c36516396c074d89492f599f715c5, type: 3}
       propertyPath: m_Name
       value: Canvas - Main
@@ -13449,6 +13464,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3661151298866594352, guid: 3e7c36516396c074d89492f599f715c5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b114061ee58f42c41a05ccd9fb149d97, type: 2}
+    - target: {fileID: 3661151298866594352, guid: 3e7c36516396c074d89492f599f715c5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5783476263418829612, guid: b114061ee58f42c41a05ccd9fb149d97, type: 2}
+    - target: {fileID: 3661151298866594352, guid: 3e7c36516396c074d89492f599f715c5, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4973489025530662743, guid: 3e7c36516396c074d89492f599f715c5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -13476,6 +13503,10 @@ PrefabInstance:
     - target: {fileID: 5048332905166055928, guid: 3e7c36516396c074d89492f599f715c5, type: 3}
       propertyPath: m_RenderMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5461252917425233100, guid: 3e7c36516396c074d89492f599f715c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -115
       objectReference: {fileID: 0}
     - target: {fileID: 5515094818747716964, guid: 3e7c36516396c074d89492f599f715c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -16737,6 +16768,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4504524130642332244, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_ActionAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 7434851320941268098, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -16847,10 +16882,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7434851322872225859, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
