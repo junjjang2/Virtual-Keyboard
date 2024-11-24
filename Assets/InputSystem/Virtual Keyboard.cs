@@ -25,6 +25,295 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
     ""name"": ""Virtual Keyboard"",
     ""maps"": [
         {
+            ""name"": ""EyeFlick"",
+            ""id"": ""f7102457-cc4a-43dd-8aa5-a5a281adc366"",
+            ""actions"": [
+                {
+                    ""name"": ""Fortis"",
+                    ""type"": ""Button"",
+                    ""id"": ""f0a122c2-f0e4-409e-827b-bc024f26c59f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aspirated"",
+                    ""type"": ""Button"",
+                    ""id"": ""76bfbd29-6113-4840-8c3e-584937cf6337"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectVowel"",
+                    ""type"": ""Value"",
+                    ""id"": ""88c205a1-2609-4159-8eb2-483ba5dc258b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""line"",
+                    ""type"": ""Button"",
+                    ""id"": ""7ddd93ca-2c07-472e-88ff-b8b3a19bbcda"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""yi"",
+                    ""type"": ""Button"",
+                    ""id"": ""8cfda3a5-3d49-45bc-b97b-f209e2b91667"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Space"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad7f24ab-55d3-409c-820b-4a4401ffa87b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""5e272fc4-4177-41a4-8a28-a4f4f814960b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Tab"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d610014-067d-452f-9cf1-2cd3815e8333"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ebd01091-3c62-4155-9710-3f40d3a6192e"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fortis"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e72b336-3682-4013-87e1-2862a25a4038"",
+                    ""path"": ""<XRController>{LeftHand}/{GripButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""Fortis"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b647012-15ff-4933-aec8-53ead070d505"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aspirated"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eba90a99-25d3-4945-bc21-5e6be2779e4e"",
+                    ""path"": ""<XRController>{LeftHand}/{TriggerButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""Aspirated"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""ab603d1f-e29c-4105-969d-e951ef848dbd"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectVowel"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""aa1343e7-99ce-445b-83c5-6a4efd927829"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectVowel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""a09b6c7f-23cc-4268-bec9-ae98b4cf44e0"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectVowel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d58a6193-853d-4557-a3f3-d71a93ca4ce4"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectVowel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""b0d16009-c5e3-4a13-81b4-d2b3235ef77f"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectVowel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2cde002b-dc2b-4a2c-a87b-0bffe57945ca"",
+                    ""path"": ""<XRController>{RightHand}/{Primary2DAxis}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""SelectVowel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b7b64576-4a5d-4cd9-911d-0cbcc1f3ae34"",
+                    ""path"": ""<XRController>{RightHand}/{GripButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""line"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f8ea4ef-fd68-4676-af80-aba8f7a3aaa6"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""line"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0375df93-ab96-400f-8cf5-e17707cc25c5"",
+                    ""path"": ""<XRController>{RightHand}/{TriggerButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""yi"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""09265872-e3c2-45a6-a551-8dffc1f4ed8c"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""yi"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7864c373-8c10-4d46-85a1-c728a4cfe868"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78619b3e-2182-4ea8-8649-9b9053f3a367"",
+                    ""path"": ""<XRController>{LeftHand}/{PrimaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""Space"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""53dd6300-dd80-4157-965e-3b3ec10305d1"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Space"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2515e453-afeb-42f3-96f1-ab43e0148635"",
+                    ""path"": ""<XRController>{LeftHand}/{SecondaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""49d9781a-6b5c-4bd5-81d6-18b9a796cd9c"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""VKeyboard"",
             ""id"": ""b32e933a-3d6d-4af5-9e94-53f20196614b"",
             ""actions"": [
@@ -279,317 +568,6 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
-        },
-        {
-            ""name"": ""EyeFlick"",
-            ""id"": ""f7102457-cc4a-43dd-8aa5-a5a281adc366"",
-            ""actions"": [
-                {
-                    ""name"": ""Shift"",
-                    ""type"": ""Button"",
-                    ""id"": ""f0a122c2-f0e4-409e-827b-bc024f26c59f"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ctrl"",
-                    ""type"": ""Button"",
-                    ""id"": ""76bfbd29-6113-4840-8c3e-584937cf6337"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SelectVowel"",
-                    ""type"": ""Value"",
-                    ""id"": ""88c205a1-2609-4159-8eb2-483ba5dc258b"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""line"",
-                    ""type"": ""Button"",
-                    ""id"": ""7ddd93ca-2c07-472e-88ff-b8b3a19bbcda"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""yi"",
-                    ""type"": ""Button"",
-                    ""id"": ""8cfda3a5-3d49-45bc-b97b-f209e2b91667"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Tab"",
-                    ""type"": ""Button"",
-                    ""id"": ""4d610014-067d-452f-9cf1-2cd3815e8333"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Space"",
-                    ""type"": ""Button"",
-                    ""id"": ""ad7f24ab-55d3-409c-820b-4a4401ffa87b"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Select"",
-                    ""type"": ""Button"",
-                    ""id"": ""5e272fc4-4177-41a4-8a28-a4f4f814960b"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""ebd01091-3c62-4155-9710-3f40d3a6192e"",
-                    ""path"": ""<Keyboard>/leftShift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""Shift"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2e72b336-3682-4013-87e1-2862a25a4038"",
-                    ""path"": ""<XRController>{LeftHand}/{GripButton}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";XR"",
-                    ""action"": ""Shift"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7b647012-15ff-4933-aec8-53ead070d505"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";PC"",
-                    ""action"": ""Ctrl"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""eba90a99-25d3-4945-bc21-5e6be2779e4e"",
-                    ""path"": ""<XRController>{LeftHand}/{TriggerButton}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";XR"",
-                    ""action"": ""Ctrl"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""ab603d1f-e29c-4105-969d-e951ef848dbd"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SelectVowel"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""aa1343e7-99ce-445b-83c5-6a4efd927829"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SelectVowel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""a09b6c7f-23cc-4268-bec9-ae98b4cf44e0"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SelectVowel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""d58a6193-853d-4557-a3f3-d71a93ca4ce4"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SelectVowel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""b0d16009-c5e3-4a13-81b4-d2b3235ef77f"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SelectVowel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2cde002b-dc2b-4a2c-a87b-0bffe57945ca"",
-                    ""path"": ""<XRController>{LeftHand}/{Primary2DAxis}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";XR"",
-                    ""action"": ""SelectVowel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""698041d6-617c-4dcd-8bfb-5eaf5b3b4c1d"",
-                    ""path"": ""<Mouse>/forwardButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";PC"",
-                    ""action"": ""line"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b7b64576-4a5d-4cd9-911d-0cbcc1f3ae34"",
-                    ""path"": ""<XRController>{RightHand}/{GripButton}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";XR"",
-                    ""action"": ""line"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0f8ea4ef-fd68-4676-af80-aba8f7a3aaa6"",
-                    ""path"": ""<Keyboard>/i"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""line"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""dedf5184-1ab7-4211-9606-13208209ac89"",
-                    ""path"": ""<Mouse>/backButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";PC"",
-                    ""action"": ""yi"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0375df93-ab96-400f-8cf5-e17707cc25c5"",
-                    ""path"": ""<XRController>{RightHand}/{TriggerButton}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";XR"",
-                    ""action"": ""yi"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""09265872-e3c2-45a6-a551-8dffc1f4ed8c"",
-                    ""path"": ""<Keyboard>/o"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""yi"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7864c373-8c10-4d46-85a1-c728a4cfe868"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";PC"",
-                    ""action"": ""Tab"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""78619b3e-2182-4ea8-8649-9b9053f3a367"",
-                    ""path"": ""<XRController>{LeftHand}/{PrimaryButton}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";XR"",
-                    ""action"": ""Space"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""53dd6300-dd80-4157-965e-3b3ec10305d1"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Space"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2515e453-afeb-42f3-96f1-ab43e0148635"",
-                    ""path"": ""<XRController>{LeftHand}/{SecondaryButton}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""49d9781a-6b5c-4bd5-81d6-18b9a796cd9c"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
         }
     ],
     ""controlSchemes"": [
@@ -617,6 +595,16 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
         }
     ]
 }");
+        // EyeFlick
+        m_EyeFlick = asset.FindActionMap("EyeFlick", throwIfNotFound: true);
+        m_EyeFlick_Fortis = m_EyeFlick.FindAction("Fortis", throwIfNotFound: true);
+        m_EyeFlick_Aspirated = m_EyeFlick.FindAction("Aspirated", throwIfNotFound: true);
+        m_EyeFlick_SelectVowel = m_EyeFlick.FindAction("SelectVowel", throwIfNotFound: true);
+        m_EyeFlick_line = m_EyeFlick.FindAction("line", throwIfNotFound: true);
+        m_EyeFlick_yi = m_EyeFlick.FindAction("yi", throwIfNotFound: true);
+        m_EyeFlick_Space = m_EyeFlick.FindAction("Space", throwIfNotFound: true);
+        m_EyeFlick_Select = m_EyeFlick.FindAction("Select", throwIfNotFound: true);
+        m_EyeFlick_Tab = m_EyeFlick.FindAction("Tab", throwIfNotFound: true);
         // VKeyboard
         m_VKeyboard = asset.FindActionMap("VKeyboard", throwIfNotFound: true);
         m_VKeyboard_LeftJoystick = m_VKeyboard.FindAction("Left Joystick", throwIfNotFound: true);
@@ -627,22 +615,12 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
         m_VKeyboard_LeftSecondary = m_VKeyboard.FindAction("Left Secondary", throwIfNotFound: true);
         m_VKeyboard_RightPrim = m_VKeyboard.FindAction("Right Prim", throwIfNotFound: true);
         m_VKeyboard_RightSecondary = m_VKeyboard.FindAction("Right Secondary", throwIfNotFound: true);
-        // EyeFlick
-        m_EyeFlick = asset.FindActionMap("EyeFlick", throwIfNotFound: true);
-        m_EyeFlick_Shift = m_EyeFlick.FindAction("Shift", throwIfNotFound: true);
-        m_EyeFlick_Ctrl = m_EyeFlick.FindAction("Ctrl", throwIfNotFound: true);
-        m_EyeFlick_SelectVowel = m_EyeFlick.FindAction("SelectVowel", throwIfNotFound: true);
-        m_EyeFlick_line = m_EyeFlick.FindAction("line", throwIfNotFound: true);
-        m_EyeFlick_yi = m_EyeFlick.FindAction("yi", throwIfNotFound: true);
-        m_EyeFlick_Tab = m_EyeFlick.FindAction("Tab", throwIfNotFound: true);
-        m_EyeFlick_Space = m_EyeFlick.FindAction("Space", throwIfNotFound: true);
-        m_EyeFlick_Select = m_EyeFlick.FindAction("Select", throwIfNotFound: true);
     }
 
     ~@VirtualKeyboard()
     {
-        Debug.Assert(!m_VKeyboard.enabled, "This will cause a leak and performance issues, VirtualKeyboard.VKeyboard.Disable() has not been called.");
         Debug.Assert(!m_EyeFlick.enabled, "This will cause a leak and performance issues, VirtualKeyboard.EyeFlick.Disable() has not been called.");
+        Debug.Assert(!m_VKeyboard.enabled, "This will cause a leak and performance issues, VirtualKeyboard.VKeyboard.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -700,6 +678,108 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
     {
         return asset.FindBinding(bindingMask, out action);
     }
+
+    // EyeFlick
+    private readonly InputActionMap m_EyeFlick;
+    private List<IEyeFlickActions> m_EyeFlickActionsCallbackInterfaces = new List<IEyeFlickActions>();
+    private readonly InputAction m_EyeFlick_Fortis;
+    private readonly InputAction m_EyeFlick_Aspirated;
+    private readonly InputAction m_EyeFlick_SelectVowel;
+    private readonly InputAction m_EyeFlick_line;
+    private readonly InputAction m_EyeFlick_yi;
+    private readonly InputAction m_EyeFlick_Space;
+    private readonly InputAction m_EyeFlick_Select;
+    private readonly InputAction m_EyeFlick_Tab;
+    public struct EyeFlickActions
+    {
+        private @VirtualKeyboard m_Wrapper;
+        public EyeFlickActions(@VirtualKeyboard wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Fortis => m_Wrapper.m_EyeFlick_Fortis;
+        public InputAction @Aspirated => m_Wrapper.m_EyeFlick_Aspirated;
+        public InputAction @SelectVowel => m_Wrapper.m_EyeFlick_SelectVowel;
+        public InputAction @line => m_Wrapper.m_EyeFlick_line;
+        public InputAction @yi => m_Wrapper.m_EyeFlick_yi;
+        public InputAction @Space => m_Wrapper.m_EyeFlick_Space;
+        public InputAction @Select => m_Wrapper.m_EyeFlick_Select;
+        public InputAction @Tab => m_Wrapper.m_EyeFlick_Tab;
+        public InputActionMap Get() { return m_Wrapper.m_EyeFlick; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(EyeFlickActions set) { return set.Get(); }
+        public void AddCallbacks(IEyeFlickActions instance)
+        {
+            if (instance == null || m_Wrapper.m_EyeFlickActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_EyeFlickActionsCallbackInterfaces.Add(instance);
+            @Fortis.started += instance.OnFortis;
+            @Fortis.performed += instance.OnFortis;
+            @Fortis.canceled += instance.OnFortis;
+            @Aspirated.started += instance.OnAspirated;
+            @Aspirated.performed += instance.OnAspirated;
+            @Aspirated.canceled += instance.OnAspirated;
+            @SelectVowel.started += instance.OnSelectVowel;
+            @SelectVowel.performed += instance.OnSelectVowel;
+            @SelectVowel.canceled += instance.OnSelectVowel;
+            @line.started += instance.OnLine;
+            @line.performed += instance.OnLine;
+            @line.canceled += instance.OnLine;
+            @yi.started += instance.OnYi;
+            @yi.performed += instance.OnYi;
+            @yi.canceled += instance.OnYi;
+            @Space.started += instance.OnSpace;
+            @Space.performed += instance.OnSpace;
+            @Space.canceled += instance.OnSpace;
+            @Select.started += instance.OnSelect;
+            @Select.performed += instance.OnSelect;
+            @Select.canceled += instance.OnSelect;
+            @Tab.started += instance.OnTab;
+            @Tab.performed += instance.OnTab;
+            @Tab.canceled += instance.OnTab;
+        }
+
+        private void UnregisterCallbacks(IEyeFlickActions instance)
+        {
+            @Fortis.started -= instance.OnFortis;
+            @Fortis.performed -= instance.OnFortis;
+            @Fortis.canceled -= instance.OnFortis;
+            @Aspirated.started -= instance.OnAspirated;
+            @Aspirated.performed -= instance.OnAspirated;
+            @Aspirated.canceled -= instance.OnAspirated;
+            @SelectVowel.started -= instance.OnSelectVowel;
+            @SelectVowel.performed -= instance.OnSelectVowel;
+            @SelectVowel.canceled -= instance.OnSelectVowel;
+            @line.started -= instance.OnLine;
+            @line.performed -= instance.OnLine;
+            @line.canceled -= instance.OnLine;
+            @yi.started -= instance.OnYi;
+            @yi.performed -= instance.OnYi;
+            @yi.canceled -= instance.OnYi;
+            @Space.started -= instance.OnSpace;
+            @Space.performed -= instance.OnSpace;
+            @Space.canceled -= instance.OnSpace;
+            @Select.started -= instance.OnSelect;
+            @Select.performed -= instance.OnSelect;
+            @Select.canceled -= instance.OnSelect;
+            @Tab.started -= instance.OnTab;
+            @Tab.performed -= instance.OnTab;
+            @Tab.canceled -= instance.OnTab;
+        }
+
+        public void RemoveCallbacks(IEyeFlickActions instance)
+        {
+            if (m_Wrapper.m_EyeFlickActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IEyeFlickActions instance)
+        {
+            foreach (var item in m_Wrapper.m_EyeFlickActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_EyeFlickActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public EyeFlickActions @EyeFlick => new EyeFlickActions(this);
 
     // VKeyboard
     private readonly InputActionMap m_VKeyboard;
@@ -802,108 +882,6 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
         }
     }
     public VKeyboardActions @VKeyboard => new VKeyboardActions(this);
-
-    // EyeFlick
-    private readonly InputActionMap m_EyeFlick;
-    private List<IEyeFlickActions> m_EyeFlickActionsCallbackInterfaces = new List<IEyeFlickActions>();
-    private readonly InputAction m_EyeFlick_Shift;
-    private readonly InputAction m_EyeFlick_Ctrl;
-    private readonly InputAction m_EyeFlick_SelectVowel;
-    private readonly InputAction m_EyeFlick_line;
-    private readonly InputAction m_EyeFlick_yi;
-    private readonly InputAction m_EyeFlick_Tab;
-    private readonly InputAction m_EyeFlick_Space;
-    private readonly InputAction m_EyeFlick_Select;
-    public struct EyeFlickActions
-    {
-        private @VirtualKeyboard m_Wrapper;
-        public EyeFlickActions(@VirtualKeyboard wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Shift => m_Wrapper.m_EyeFlick_Shift;
-        public InputAction @Ctrl => m_Wrapper.m_EyeFlick_Ctrl;
-        public InputAction @SelectVowel => m_Wrapper.m_EyeFlick_SelectVowel;
-        public InputAction @line => m_Wrapper.m_EyeFlick_line;
-        public InputAction @yi => m_Wrapper.m_EyeFlick_yi;
-        public InputAction @Tab => m_Wrapper.m_EyeFlick_Tab;
-        public InputAction @Space => m_Wrapper.m_EyeFlick_Space;
-        public InputAction @Select => m_Wrapper.m_EyeFlick_Select;
-        public InputActionMap Get() { return m_Wrapper.m_EyeFlick; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(EyeFlickActions set) { return set.Get(); }
-        public void AddCallbacks(IEyeFlickActions instance)
-        {
-            if (instance == null || m_Wrapper.m_EyeFlickActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_EyeFlickActionsCallbackInterfaces.Add(instance);
-            @Shift.started += instance.OnShift;
-            @Shift.performed += instance.OnShift;
-            @Shift.canceled += instance.OnShift;
-            @Ctrl.started += instance.OnCtrl;
-            @Ctrl.performed += instance.OnCtrl;
-            @Ctrl.canceled += instance.OnCtrl;
-            @SelectVowel.started += instance.OnSelectVowel;
-            @SelectVowel.performed += instance.OnSelectVowel;
-            @SelectVowel.canceled += instance.OnSelectVowel;
-            @line.started += instance.OnLine;
-            @line.performed += instance.OnLine;
-            @line.canceled += instance.OnLine;
-            @yi.started += instance.OnYi;
-            @yi.performed += instance.OnYi;
-            @yi.canceled += instance.OnYi;
-            @Tab.started += instance.OnTab;
-            @Tab.performed += instance.OnTab;
-            @Tab.canceled += instance.OnTab;
-            @Space.started += instance.OnSpace;
-            @Space.performed += instance.OnSpace;
-            @Space.canceled += instance.OnSpace;
-            @Select.started += instance.OnSelect;
-            @Select.performed += instance.OnSelect;
-            @Select.canceled += instance.OnSelect;
-        }
-
-        private void UnregisterCallbacks(IEyeFlickActions instance)
-        {
-            @Shift.started -= instance.OnShift;
-            @Shift.performed -= instance.OnShift;
-            @Shift.canceled -= instance.OnShift;
-            @Ctrl.started -= instance.OnCtrl;
-            @Ctrl.performed -= instance.OnCtrl;
-            @Ctrl.canceled -= instance.OnCtrl;
-            @SelectVowel.started -= instance.OnSelectVowel;
-            @SelectVowel.performed -= instance.OnSelectVowel;
-            @SelectVowel.canceled -= instance.OnSelectVowel;
-            @line.started -= instance.OnLine;
-            @line.performed -= instance.OnLine;
-            @line.canceled -= instance.OnLine;
-            @yi.started -= instance.OnYi;
-            @yi.performed -= instance.OnYi;
-            @yi.canceled -= instance.OnYi;
-            @Tab.started -= instance.OnTab;
-            @Tab.performed -= instance.OnTab;
-            @Tab.canceled -= instance.OnTab;
-            @Space.started -= instance.OnSpace;
-            @Space.performed -= instance.OnSpace;
-            @Space.canceled -= instance.OnSpace;
-            @Select.started -= instance.OnSelect;
-            @Select.performed -= instance.OnSelect;
-            @Select.canceled -= instance.OnSelect;
-        }
-
-        public void RemoveCallbacks(IEyeFlickActions instance)
-        {
-            if (m_Wrapper.m_EyeFlickActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IEyeFlickActions instance)
-        {
-            foreach (var item in m_Wrapper.m_EyeFlickActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_EyeFlickActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public EyeFlickActions @EyeFlick => new EyeFlickActions(this);
     private int m_PCSchemeIndex = -1;
     public InputControlScheme PCScheme
     {
@@ -922,6 +900,17 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_XRSchemeIndex];
         }
     }
+    public interface IEyeFlickActions
+    {
+        void OnFortis(InputAction.CallbackContext context);
+        void OnAspirated(InputAction.CallbackContext context);
+        void OnSelectVowel(InputAction.CallbackContext context);
+        void OnLine(InputAction.CallbackContext context);
+        void OnYi(InputAction.CallbackContext context);
+        void OnSpace(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
+        void OnTab(InputAction.CallbackContext context);
+    }
     public interface IVKeyboardActions
     {
         void OnLeftJoystick(InputAction.CallbackContext context);
@@ -932,16 +921,5 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
         void OnLeftSecondary(InputAction.CallbackContext context);
         void OnRightPrim(InputAction.CallbackContext context);
         void OnRightSecondary(InputAction.CallbackContext context);
-    }
-    public interface IEyeFlickActions
-    {
-        void OnShift(InputAction.CallbackContext context);
-        void OnCtrl(InputAction.CallbackContext context);
-        void OnSelectVowel(InputAction.CallbackContext context);
-        void OnLine(InputAction.CallbackContext context);
-        void OnYi(InputAction.CallbackContext context);
-        void OnTab(InputAction.CallbackContext context);
-        void OnSpace(InputAction.CallbackContext context);
-        void OnSelect(InputAction.CallbackContext context);
     }
 }

@@ -231,4 +231,4 @@ _test/
 _test.meta
 
 /[Aa]ssets/TextMesh Pro/*
-/[Aa]ssets/Fonts/*
+# /[Aa]ssets/Fonts/*

@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public enum VowelSelect
 {
     None,
+    wo,
+    wa,
     a,
     oh,
     oo,
@@ -17,11 +19,17 @@ public class WordText : MonoBehaviour
     public VowelSelect currentVowel;
     public VowelType currentVowelType;
     
+    // 단모음
     public VowelText Ah;
     public VowelText Oh;
     public VowelText Oo;
     public VowelText Uh;
 
+    // 이중모음
+    public VowelText Wa; // ㅘ
+    public VowelText Wo; // ㅝ
+    
+    
     public Image image;
 
     public char CurrentVowel
@@ -30,6 +38,10 @@ public class WordText : MonoBehaviour
         {
             switch (currentVowel)
             {
+                case VowelSelect.wo:
+                    return Wo.GetCurrentVowel();
+                case VowelSelect.wa:
+                    return Wa.GetCurrentVowel();
                 case VowelSelect.a:
                     return Ah.GetCurrentVowel();
                 case VowelSelect.oh:
@@ -57,7 +69,7 @@ public class WordText : MonoBehaviour
         var cons = consonant.CurrentText;
         var vowel = CurrentVowel;
         var finalSound = default(char);
-        var combined = HangulCombiner.CombineHangul(cons, vowel);
+        var combined = HangeulCombiner.CombineHangul(cons, vowel);
         
         if (combined != cons)
         {
@@ -101,6 +113,8 @@ public class WordText : MonoBehaviour
     public void SetVowelType(VowelType type)
     {
         currentVowelType = type;
+        Wo.SetVowelType(currentVowelType);
+        Wa.SetVowelType(currentVowelType);
         Ah.SetVowelType(currentVowelType);
         Oh.SetVowelType(currentVowelType);
         Oo.SetVowelType(currentVowelType);
@@ -111,6 +125,8 @@ public class WordText : MonoBehaviour
     {
         currentVowel = select;
         
+        Wo.gameObject.SetActive(false);
+        Wa.gameObject.SetActive(false);
         Ah.gameObject.SetActive(false);
         Oh.gameObject.SetActive(false);
         Oo.gameObject.SetActive(false);
@@ -118,6 +134,12 @@ public class WordText : MonoBehaviour
         
         switch (select)
         {
+            case VowelSelect.wo:
+                Wo.gameObject.SetActive(true);
+                break;
+            case VowelSelect.wa:
+                Wa.gameObject.SetActive(true);
+                break;
             case VowelSelect.a:
                 Ah.gameObject.SetActive(true);
                 break;
@@ -141,6 +163,8 @@ public class WordText : MonoBehaviour
     public void EnableAll()
     {
         EnableConsonant(ConsonantType.Consonant);
+        Wo.gameObject.SetActive(true);
+        Wa.gameObject.SetActive(true);
         Ah.gameObject.SetActive(true);
         Oh.gameObject.SetActive(true);
         Oo.gameObject.SetActive(true);
@@ -150,6 +174,8 @@ public class WordText : MonoBehaviour
     public void DisableAll()
     {
         currentVowel = VowelSelect.None;
+        Wo.gameObject.SetActive(false);
+        Wa.gameObject.SetActive(false);
         Ah.gameObject.SetActive(false);
         Oh.gameObject.SetActive(false);
         Oo.gameObject.SetActive(false);

@@ -21,15 +21,6 @@ public class VowelText : MonoBehaviour
     
     public VowelType currentType;
 
-    // public void SetVowel(string vowel, string line, string yi, string lineyi)
-    // {
-    //     this.vowel.text = vowel;
-    //     this.line.text = line;
-    //     this.yi.text = yi;
-    //     this.lineyi.text = lineyi;
-    //     currentType = VowelType.Vowel;
-    // }
-
 	private char GetVowel(VowelType type)
     {
         return type switch

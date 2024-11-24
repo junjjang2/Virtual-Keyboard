@@ -83,53 +83,9 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         selectedWord.SelectVowel(currentVowel);
         jung = selectedWord.CurrentVowel;
         
-        previewText.text = HangulCombiner.CombineHangul(cho, jung, jong).ToString();
+        previewText.text = HangeulCombiner.CombineHangul(cho, jung, jong).ToString();
         
         // 종성은 선택 X (초성 입력을 중성 입력으로 전달)
-        
-        // if (currentVowel == VowelSelect.None)
-        // {
-        //     if (isTriggered && !selectedWord.currentWord.Equals(' '))
-        //     {
-        //         // currentWord = selectedWord.currentWord;
-        //         // EnterWord();
-        //     }
-        //     isTriggered = false;
-        // }
-    }
-    
-    public void EnqueueWord(char word)
-    {
-        switch (currentState)
-        {
-            case WordState.None:
-                cho = word;
-                var state = HangulCombiner.GetWordState(word);
-                currentState = state;
-                break;
-            case WordState.cho:
-                // 중성이 아니라면 입력 X
-                if (HangulCombiner.GetWordState(word) != WordState.jung)
-                {
-                    return;
-                }
-                jung = word;
-                currentState = WordState.jung;
-                break;
-            case WordState.jung:
-                // 종성이 입력되었는 지 확인
-                if(HangulCombiner.GetWordState(word) == WordState.jong)
-                {
-                    jong = word;
-                    currentState = WordState.jong;
-                }
-                if(HangulCombiner.GetWordState(word) == WordState.cho)
-                {
-                    jong = word;
-                    currentState = WordState.jong;
-                }
-                break;
-        }
     }
     
     public void EnterWord()
@@ -139,14 +95,14 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         if(canAddJong != '\0')
         {
             PopWord();
-            virtualKeyboardView.text += HangulCombiner.CombineHangul(prevCho, prevJung, canAddJong);
+            virtualKeyboardView.text += HangeulCombiner.CombineHangul(prevCho, prevJung, canAddJong);
             cho = prevCho;
             jung = prevJung;
             jong = canAddJong;
         }
         else
         {
-            virtualKeyboardView.text += HangulCombiner.CombineHangul(cho, jung, jong);
+            virtualKeyboardView.text += HangeulCombiner.CombineHangul(cho, jung, jong);
         }
         ResetWord();
     }
@@ -161,22 +117,20 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     
     private char CanAddJong()
     {
-        if (cho != '\0' && jung == '\0' && jong == '\0')
-        {
-            // 단자음이면 true
-            if (prevJong == '\0')
-            {
-                return cho;
-            }
-            else if(jongComb.ContainsKey(prevJong) && jongComb[prevJong].ContainsKey(cho)) 
-                return jongComb[prevJong][cho];
-            else
-            {
-                return '\0';
-            }
-        }
+        // 종성을 추가할 수 있는 상태인 지 확인
+        if (cho == '\0' || jung != '\0' || jong != '\0') return '\0';
         
+        // 종성이 없다면 true
+        if (prevJong == '\0')
+            return cho;
+            
+        // 종성이 단자음이면 가능한 조합인지 확인
+        if(jongComb.ContainsKey(prevJong) && jongComb[prevJong].ContainsKey(cho)) 
+            return jongComb[prevJong][cho];
+            
+        // 가능한 조합이 없다면 종성을 추가하지 않음
         return '\0';
+
     }
 
     private void PopWord()
@@ -196,7 +150,8 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         jong = '\0';
     }
 
-    public void OnShift(InputAction.CallbackContext context)
+    // 된소리
+    public void OnFortis(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
@@ -208,7 +163,8 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         }
     }
 
-    public void OnCtrl(InputAction.CallbackContext context)
+    // 거센소리
+    public void OnAspirated(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
@@ -224,27 +180,33 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     public void OnSelectVowel(InputAction.CallbackContext context)
     {
         var value = context.ReadValue<Vector2>();
-        if(value.y > deadZone) // down, ㅜ
+        if(value.y < -deadZone && value.x < -deadZone)
         {
-            // words.ForEach(word => word.SelectVowel(VowelSelect.oo));
+            currentVowel = VowelSelect.wo;
+            isTriggered = true;
+        }
+        else if (value.y > deadZone && value.x > deadZone)
+        {
+            currentVowel = VowelSelect.wa;
+            isTriggered = true;
+        }
+        else if(value.y < -deadZone)
+        {
             currentVowel = VowelSelect.oo;
             isTriggered = true;
         }
-        else if(value.y < -deadZone) // up, ㅗ
+        else if(value.y > deadZone)
         {
-            // words.ForEach(word => word.SelectVowel(VowelSelect.oh));
             currentVowel = VowelSelect.oh;
             isTriggered = true;
         }
-        else if(value.x > deadZone) // right, ㅏ
+        else if(value.x > deadZone)
         {
-            // words.ForEach(word => word.SelectVowel(VowelSelect.a));
             currentVowel = VowelSelect.a;
             isTriggered = true;
         }
-        else if(value.x < -deadZone) // left, ㅓ
+        else if(value.x < -deadZone)
         {
-            // words.ForEach(word => word.SelectVowel(VowelSelect.uh));
             currentVowel = VowelSelect.uh;
             isTriggered = true;
         }
@@ -255,6 +217,7 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         }
     }
 
+    // 가로획 추가 (ㅡ)
     public void OnLine(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -267,6 +230,7 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         }
     }
 
+    // 세로획 추가 (ㅣ)
     public void OnYi(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -278,7 +242,8 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
             currentVowelType &= ~VowelType.Yi;
         }
     }
-
+    
+    // PC : 선택 자음 변경
     public void OnTab(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -289,10 +254,15 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         }
     }
 
+    // 공백 자음 추가
     public void OnSpace(InputAction.CallbackContext context)
     {
-        Debug.Log(' ');
-        virtualKeyboardView.text += ' ';
+        if (context.performed)
+        {
+            virtualKeyboardView.text += ' ';
+            ResetWord();
+        }
+
     }
 
     /// <summary>
@@ -303,9 +273,6 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     {
         if (context.performed)
         {
-            // var tmp = virtualKeyboardView.text;
-            // var c = tmp[^1];
-            //
             EnterWord();
         }
     }
