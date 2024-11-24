@@ -469,6 +469,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0f8ea4ef-fd68-4676-af80-aba8f7a3aaa6",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "line",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "dedf5184-1ab7-4211-9606-13208209ac89",
                     "path": "<Mouse>/backButton",
                     "interactions": "",
@@ -485,6 +496,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
+                    "action": "yi",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09265872-e3c2-45a6-a551-8dffc1f4ed8c",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "yi",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -513,8 +535,30 @@
                 },
                 {
                     "name": "",
+                    "id": "53dd6300-dd80-4157-965e-3b3ec10305d1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Space",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2515e453-afeb-42f3-96f1-ab43e0148635",
                     "path": "<XRController>{LeftHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "49d9781a-6b5c-4bd5-81d6-18b9a796cd9c",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

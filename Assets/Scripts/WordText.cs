@@ -39,7 +39,13 @@ public class WordText : MonoBehaviour
                 case VowelSelect.uh:
                     return Uh.GetCurrentVowel();
                 default:
-                    return default;
+                    return currentVowelType switch
+                    {
+                        VowelType.Line => 'ㅡ',
+                        VowelType.Yi => 'ㅣ',
+                        VowelType.LineYi => 'ㅢ',
+                        _ => default
+                    };
             }
         }
     }
@@ -90,6 +96,15 @@ public class WordText : MonoBehaviour
     public void EnableConsonant(ConsonantType type)
     {
         consonant.EnableConsonant(type);
+    }
+    
+    public void SetVowelType(VowelType type)
+    {
+        currentVowelType = type;
+        Ah.SetVowelType(currentVowelType);
+        Oh.SetVowelType(currentVowelType);
+        Oo.SetVowelType(currentVowelType);
+        Uh.SetVowelType(currentVowelType);
     }
     
     public void SelectVowel(VowelSelect select)

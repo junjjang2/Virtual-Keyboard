@@ -26,13 +26,34 @@ class HangulCombiner
             return cho;
         }
 
-        if (choIndex == -1 || jungIndex == -1 || jongIndex == -1)
+        if (choIndex == -1 || jongIndex == -1)
         {
             return ' ';
         }
 
         int unicode = HangulBase + (choIndex * JungSeongCount * JongSeongCount) + (jungIndex * JongSeongCount) + jongIndex;
         return (char)unicode;
+    }
+    
+    // 주어진 char가 초성인지, 중성인지, 종성인지 판별
+    public static WordState GetWordState(char character)
+    {
+        if (Array.IndexOf(ChoSeongArray, character) != -1)
+        {
+            return WordState.cho;
+        }
+
+        if (Array.IndexOf(JungSeongArray, character) != -1)
+        {
+            return WordState.jung;
+        }
+
+        if (Array.IndexOf(JongSeongArray, character) != -1)
+        {
+            return WordState.jong;
+        }
+
+        return WordState.None;
     }
 
     static void Main()
