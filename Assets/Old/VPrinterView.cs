@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 namespace VKey
@@ -8,7 +9,13 @@ namespace VKey
         private VPrinter _vPrinter;
         
         public TMP_Text text;
-        
+
+        public void Start()
+        {
+            // 텍스트 초기화
+            text.text = "";
+        }
+
         public void Initialize(VPrinter vPrinter)
         {
             _vPrinter = vPrinter;

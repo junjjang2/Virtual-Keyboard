@@ -9,7 +9,7 @@ public enum VowelSelect
     a,
     oh,
     oo,
-    uh,
+    uh
 }
 
 public class WordText : MonoBehaviour
@@ -20,14 +20,22 @@ public class WordText : MonoBehaviour
     public VowelType currentVowelType;
     
     // 단모음
+    [Header("단모음")]
     public VowelText Ah;
     public VowelText Oh;
     public VowelText Oo;
     public VowelText Uh;
 
     // 이중모음
+    [Header("이중모음")]
     public VowelText Wa; // ㅘ
     public VowelText Wo; // ㅝ
+    public VowelText LineYi; // ㅢ
+    
+    // 기본자
+    [Header("기본자")]
+    public VowelText Yi; // ㅣ
+    public VowelText Line; // ㅡ
     
     
     public Image image;
@@ -68,7 +76,6 @@ public class WordText : MonoBehaviour
     {
         var cons = consonant.CurrentText;
         var vowel = CurrentVowel;
-        var finalSound = default(char);
         var combined = HangeulCombiner.CombineHangul(cons, vowel);
         
         if (combined != cons)
@@ -132,6 +139,10 @@ public class WordText : MonoBehaviour
         Oo.gameObject.SetActive(false);
         Uh.gameObject.SetActive(false);
         
+        Line.gameObject.SetActive(false);
+        Yi.gameObject.SetActive(false);
+        LineYi.gameObject.SetActive(false);
+        
         switch (select)
         {
             case VowelSelect.wo:
@@ -151,6 +162,20 @@ public class WordText : MonoBehaviour
                 break;
             case VowelSelect.uh:
                 Uh.gameObject.SetActive(true);
+                break;
+            default:
+                switch (currentVowelType)
+                {
+                    case VowelType.Line:
+                        Line.gameObject.SetActive(true);
+                        break;
+                    case VowelType.Yi:
+                        Yi.gameObject.SetActive(true);
+                        break;
+                    case VowelType.LineYi:
+                        LineYi.gameObject.SetActive(true);
+                        break;
+                }
                 break;
         }
     }
@@ -180,5 +205,8 @@ public class WordText : MonoBehaviour
         Oh.gameObject.SetActive(false);
         Oo.gameObject.SetActive(false);
         Uh.gameObject.SetActive(false);
+        Line.gameObject.SetActive(false);   
+        Yi.gameObject.SetActive(false);
+        LineYi.gameObject.SetActive(false);
     }
 }

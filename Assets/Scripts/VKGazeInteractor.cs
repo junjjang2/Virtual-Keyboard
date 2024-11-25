@@ -8,21 +8,22 @@ public class VkGazeInteractor : MonoBehaviour
     [SerializeField] public LayerMask layers = ~0;
 
     [SerializeField] private float maxDistance = 10f;
+    [SerializeField] private float endPointDistance = 1.2f;
 
     private WordText selectedWord;
 
     public void Start()
     {
         lineRenderer.SetPosition(0, transform.position);
-        lineRenderer.SetPosition(1, transform.forward * 100);
+        lineRenderer.SetPosition(1, transform.forward * endPointDistance);
     }
 
     public void Update()
     {
         lineRenderer.SetPosition(0, transform.position);
 
-        lineRenderer.SetPosition(1, transform.forward * maxDistance); 
-        endPoint.position = transform.position + transform.forward * maxDistance;
+        lineRenderer.SetPosition(1, transform.forward * endPointDistance); 
+        endPoint.position = transform.position + transform.forward * endPointDistance;
             
         if (!Physics.Raycast(transform.position, transform.forward, out var hit, maxDistance, layers)) return;
             

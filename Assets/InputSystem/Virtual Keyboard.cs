@@ -99,6 +99,24 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Delete"",
+                    ""type"": ""Button"",
+                    ""id"": ""938b3689-cb03-4ec6-b9af-cd54d15cf5d8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Enter"",
+                    ""type"": ""Button"",
+                    ""id"": ""6f8f4308-d771-495c-aa9f-28f068e231df"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -116,7 +134,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2e72b336-3682-4013-87e1-2862a25a4038"",
-                    ""path"": ""<XRController>{LeftHand}/{GripButton}"",
+                    ""path"": ""<XRController>{LeftHand}/{TriggerButton}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
@@ -138,7 +156,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""eba90a99-25d3-4945-bc21-5e6be2779e4e"",
-                    ""path"": ""<XRController>{LeftHand}/{TriggerButton}"",
+                    ""path"": ""<XRController>{LeftHand}/{GripButton}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
@@ -270,7 +288,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""78619b3e-2182-4ea8-8649-9b9053f3a367"",
-                    ""path"": ""<XRController>{LeftHand}/{PrimaryButton}"",
+                    ""path"": ""<XRController>{LeftHand}/{SecondaryButton}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
@@ -292,7 +310,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2515e453-afeb-42f3-96f1-ab43e0148635"",
-                    ""path"": ""<XRController>{LeftHand}/{SecondaryButton}"",
+                    ""path"": ""<XRController>{LeftHand}/{PrimaryButton}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
@@ -308,6 +326,50 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ddb04fc4-24f7-41c1-8c07-4c760b8d0013"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Delete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a7524d8-4b56-42fa-876c-78cebc7ba1e5"",
+                    ""path"": ""<XRController>{RightHand}/{PrimaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Delete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3221504-eaa0-436b-9448-4f0a4f434a2f"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Enter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""284885a2-4723-41bc-a096-31e8c86cbf56"",
+                    ""path"": ""<XRController>{RightHand}/{SecondaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Enter"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -605,6 +667,8 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
         m_EyeFlick_Space = m_EyeFlick.FindAction("Space", throwIfNotFound: true);
         m_EyeFlick_Select = m_EyeFlick.FindAction("Select", throwIfNotFound: true);
         m_EyeFlick_Tab = m_EyeFlick.FindAction("Tab", throwIfNotFound: true);
+        m_EyeFlick_Delete = m_EyeFlick.FindAction("Delete", throwIfNotFound: true);
+        m_EyeFlick_Enter = m_EyeFlick.FindAction("Enter", throwIfNotFound: true);
         // VKeyboard
         m_VKeyboard = asset.FindActionMap("VKeyboard", throwIfNotFound: true);
         m_VKeyboard_LeftJoystick = m_VKeyboard.FindAction("Left Joystick", throwIfNotFound: true);
@@ -690,6 +754,8 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
     private readonly InputAction m_EyeFlick_Space;
     private readonly InputAction m_EyeFlick_Select;
     private readonly InputAction m_EyeFlick_Tab;
+    private readonly InputAction m_EyeFlick_Delete;
+    private readonly InputAction m_EyeFlick_Enter;
     public struct EyeFlickActions
     {
         private @VirtualKeyboard m_Wrapper;
@@ -702,6 +768,8 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
         public InputAction @Space => m_Wrapper.m_EyeFlick_Space;
         public InputAction @Select => m_Wrapper.m_EyeFlick_Select;
         public InputAction @Tab => m_Wrapper.m_EyeFlick_Tab;
+        public InputAction @Delete => m_Wrapper.m_EyeFlick_Delete;
+        public InputAction @Enter => m_Wrapper.m_EyeFlick_Enter;
         public InputActionMap Get() { return m_Wrapper.m_EyeFlick; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -735,6 +803,12 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
             @Tab.started += instance.OnTab;
             @Tab.performed += instance.OnTab;
             @Tab.canceled += instance.OnTab;
+            @Delete.started += instance.OnDelete;
+            @Delete.performed += instance.OnDelete;
+            @Delete.canceled += instance.OnDelete;
+            @Enter.started += instance.OnEnter;
+            @Enter.performed += instance.OnEnter;
+            @Enter.canceled += instance.OnEnter;
         }
 
         private void UnregisterCallbacks(IEyeFlickActions instance)
@@ -763,6 +837,12 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
             @Tab.started -= instance.OnTab;
             @Tab.performed -= instance.OnTab;
             @Tab.canceled -= instance.OnTab;
+            @Delete.started -= instance.OnDelete;
+            @Delete.performed -= instance.OnDelete;
+            @Delete.canceled -= instance.OnDelete;
+            @Enter.started -= instance.OnEnter;
+            @Enter.performed -= instance.OnEnter;
+            @Enter.canceled -= instance.OnEnter;
         }
 
         public void RemoveCallbacks(IEyeFlickActions instance)
@@ -910,6 +990,8 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
         void OnSpace(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
         void OnTab(InputAction.CallbackContext context);
+        void OnDelete(InputAction.CallbackContext context);
+        void OnEnter(InputAction.CallbackContext context);
     }
     public interface IVKeyboardActions
     {

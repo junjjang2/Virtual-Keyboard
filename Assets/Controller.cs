@@ -48,8 +48,9 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     char prevJong = '\0';
     
     WordState currentState = WordState.None;
-    
-    
+
+    private const char ReturnText = '\n';
+
     public void Awake()
     {
         virtualKeyboard = new VirtualKeyboard();
@@ -136,6 +137,7 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     private void PopWord()
     {
         // char last = virtualKeyboardView.text[^1];
+        if(virtualKeyboardView.text.Length == 0) return;
         virtualKeyboardView.text = virtualKeyboardView.text.Remove(virtualKeyboardView.text.Length - 1);
     }
 
@@ -254,6 +256,23 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         }
     }
 
+    public void OnDelete(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            PopWord();
+        }
+    }
+
+    public void OnEnter(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            virtualKeyboardView.text += ReturnText;
+            ResetWord();
+        }
+    }
+
     // 공백 자음 추가
     public void OnSpace(InputAction.CallbackContext context)
     {
@@ -262,7 +281,6 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
             virtualKeyboardView.text += ' ';
             ResetWord();
         }
-
     }
 
     /// <summary>
