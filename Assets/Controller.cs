@@ -48,8 +48,10 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     char prevJong = '\0';
     
     WordState currentState = WordState.None;
-
+    
     private const char ReturnText = '\n';
+    
+    public Action OnEnterAction;
 
     public void Awake()
     {
@@ -268,6 +270,7 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     {
         if (context.performed)
         {
+            OnEnterAction?.Invoke();
             virtualKeyboardView.text += ReturnText;
             ResetWord();
         }
