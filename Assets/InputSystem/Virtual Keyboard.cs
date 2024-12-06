@@ -117,6 +117,15 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StartExp"",
+                    ""type"": ""Button"",
+                    ""id"": ""e9e3b296-804f-4c98-a75b-53e8fafdb483"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -370,6 +379,17 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Enter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68df3077-ba39-4883-93b0-ae11eff2c4ed"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StartExp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -669,6 +689,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
         m_EyeFlick_Tab = m_EyeFlick.FindAction("Tab", throwIfNotFound: true);
         m_EyeFlick_Delete = m_EyeFlick.FindAction("Delete", throwIfNotFound: true);
         m_EyeFlick_Enter = m_EyeFlick.FindAction("Enter", throwIfNotFound: true);
+        m_EyeFlick_StartExp = m_EyeFlick.FindAction("StartExp", throwIfNotFound: true);
         // VKeyboard
         m_VKeyboard = asset.FindActionMap("VKeyboard", throwIfNotFound: true);
         m_VKeyboard_LeftJoystick = m_VKeyboard.FindAction("Left Joystick", throwIfNotFound: true);
@@ -756,6 +777,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
     private readonly InputAction m_EyeFlick_Tab;
     private readonly InputAction m_EyeFlick_Delete;
     private readonly InputAction m_EyeFlick_Enter;
+    private readonly InputAction m_EyeFlick_StartExp;
     public struct EyeFlickActions
     {
         private @VirtualKeyboard m_Wrapper;
@@ -770,6 +792,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
         public InputAction @Tab => m_Wrapper.m_EyeFlick_Tab;
         public InputAction @Delete => m_Wrapper.m_EyeFlick_Delete;
         public InputAction @Enter => m_Wrapper.m_EyeFlick_Enter;
+        public InputAction @StartExp => m_Wrapper.m_EyeFlick_StartExp;
         public InputActionMap Get() { return m_Wrapper.m_EyeFlick; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -809,6 +832,9 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
             @Enter.started += instance.OnEnter;
             @Enter.performed += instance.OnEnter;
             @Enter.canceled += instance.OnEnter;
+            @StartExp.started += instance.OnStartExp;
+            @StartExp.performed += instance.OnStartExp;
+            @StartExp.canceled += instance.OnStartExp;
         }
 
         private void UnregisterCallbacks(IEyeFlickActions instance)
@@ -843,6 +869,9 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
             @Enter.started -= instance.OnEnter;
             @Enter.performed -= instance.OnEnter;
             @Enter.canceled -= instance.OnEnter;
+            @StartExp.started -= instance.OnStartExp;
+            @StartExp.performed -= instance.OnStartExp;
+            @StartExp.canceled -= instance.OnStartExp;
         }
 
         public void RemoveCallbacks(IEyeFlickActions instance)
@@ -992,6 +1021,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
         void OnTab(InputAction.CallbackContext context);
         void OnDelete(InputAction.CallbackContext context);
         void OnEnter(InputAction.CallbackContext context);
+        void OnStartExp(InputAction.CallbackContext context);
     }
     public interface IVKeyboardActions
     {

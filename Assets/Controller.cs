@@ -32,6 +32,11 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     public VowelSelect currentVowel;
     public VowelType currentVowelType;
     public ConsonantType currentConsonantType;
+
+
+    [SerializeField] public WordText Enter;
+    [SerializeField] public WordText Space;
+    [SerializeField] public WordText Backspace;
     
     bool isTriggered = false;
     
@@ -76,6 +81,16 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
             return;
         }
         
+        // switch (selectedWord)
+        // {
+        //     case var wrd when selectedWord == Enter:
+        //         return;
+        //     case var wrd when selectedWord == Space:
+        //         return;
+        //     case var wrd when selectedWord == Backspace:
+        //         return;
+        // }
+        
         // 초성을 선택
         cho = selectedWord.consonant.CurrentText;
         
@@ -93,6 +108,22 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     
     public void EnterWord()
     {
+        // switch (selectedWord)
+        // {
+        //     case var wrd when selectedWord == Enter:
+        //         OnEnterAction?.Invoke();
+        //         virtualKeyboardView.text += ReturnText;
+        //         ResetWord();
+        //         return;
+        //     case var wrd when selectedWord == Space:
+        //         virtualKeyboardView.text += ' ';
+        //         ResetWord();
+        //         return;
+        //     case var wrd when selectedWord == Backspace:
+        //         PopWord();
+        //         return;
+        // }
+        
         // 자음을 추가하는데 이전에 초성이랑 중성만 있으면 종성을 추가함
         var canAddJong = CanAddJong();
         if(canAddJong != '\0')
@@ -133,7 +164,6 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
             
         // 가능한 조합이 없다면 종성을 추가하지 않음
         return '\0';
-
     }
 
     private void PopWord()
@@ -274,6 +304,11 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
             virtualKeyboardView.text += ReturnText;
             ResetWord();
         }
+    }
+
+    public void OnStartExp(InputAction.CallbackContext context)
+    {
+        FindObjectOfType<Experiment>().RunExperiment();
     }
 
     // 공백 자음 추가

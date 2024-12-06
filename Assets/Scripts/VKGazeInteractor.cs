@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class VkGazeInteractor : MonoBehaviour
 {
@@ -12,10 +13,20 @@ public class VkGazeInteractor : MonoBehaviour
 
     private WordText selectedWord;
 
-    public void Start()
+    public void OnEnable()
     {
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, transform.forward * endPointDistance);
+        
+        endPoint.gameObject.SetActive(true);
+    }
+
+    public void OnDisable()
+    {
+        if(selectedWord != null)
+            selectedWord.DeselectThis();
+        
+        endPoint.gameObject.SetActive(false);
     }
 
     public void Update()

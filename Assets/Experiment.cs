@@ -7,10 +7,12 @@ using Random = UnityEngine.Random;
 public class Experiment : MonoBehaviour
 {
     public Controller controller;
+    public VkGazeInteractor vkGazeInteractor;
     
     public TMP_Text currentSentenceText;
     public TMP_Text timerText;
     public Button startButton;
+    public Button toggleGazeButton;
     
     private string _resultText;
 
@@ -42,7 +44,7 @@ public class Experiment : MonoBehaviour
     {
         controller.OnEnterAction += OnEnter;
         startButton.onClick.AddListener(RunExperiment);
-
+        toggleGazeButton.onClick.AddListener(ToggleGaze);
         LoadData();
     }
 
@@ -60,7 +62,7 @@ public class Experiment : MonoBehaviour
             // 남은 시간 0:00 형식으로 표시
             timerText.text = $"{4 - (int)(Time.time - _startTime) / 60:00}:{59 - (int)(Time.time - _startTime) % 60:00}";
             
-            if (Time.time - _startTime >= 10)
+            if (Time.time - _startTime >= 300)
             {
                 EndExperiment();
             }
@@ -74,6 +76,7 @@ public class Experiment : MonoBehaviour
         var inputLength = input.Length;
         var targetLength = _currentSentence.Length;
 
+        SaveInput(input, Time.time - _startTime);
         var errors = CalculateErrors(input, _currentSentence);
         _totalInputChars += inputLength;
         _totalErrors += errors;
@@ -139,9 +142,24 @@ public class Experiment : MonoBehaviour
         SaveResult(wpm, errorRate);
     }
 
+    private void SaveInput(string input, float timeStamp)
+    {
+        var filePath = Path.Combine(Application.persistentDataPath, $"inputs_{_startTime}.csv");
+        
+        // 첫 실행 시 헤더 작성
+        if (!File.Exists(filePath))
+        {
+            string header = "timeStamp, input\n";
+            File.WriteAllText(filePath, header);
+        }
+        
+        string data = $"{timeStamp},{input}\n";
+        File.AppendAllText(filePath, data);
+    }
+
     private void SaveResult(float wpm, float errorRate)
     {
-        var filePath = Path.Combine(Application.persistentDataPath, "results.csv");
+        var filePath = Path.Combine(Application.persistentDataPath, $"results_{_startTime}.csv");
         // var delimiter = ",";
         
         // 첫 실행 시 헤더 작성
@@ -155,7 +173,7 @@ public class Experiment : MonoBehaviour
         File.AppendAllText(filePath, data);
     }
 
-    private void RunExperiment()
+    public void RunExperiment()
     {
         // 테스트 데이터 로드
         GetTestSet();
@@ -213,5 +231,10 @@ public class Experiment : MonoBehaviour
             var k = Random.Range(0, n);
             (array[k], array[n]) = (array[n], array[k]);
         }
+    }
+
+    private void ToggleGaze()
+    {
+        vkGazeInteractor.enabled = !vkGazeInteractor.enabled;
     }
 }

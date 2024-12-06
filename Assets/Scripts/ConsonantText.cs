@@ -26,7 +26,7 @@ public class ConsonantText : MonoBehaviour
             switch (currentType)
             {
                 case ConsonantType.Consonant:
-                    return consonant.text[0];
+                    return (consonant.text.Length > 0 ? consonant.text[0] : default);
                 case ConsonantType.Fortis:
                     return (fortis.text.Length > 0 ? fortis.text[0] : default);
                 case ConsonantType.Aspirated:
