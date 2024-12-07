@@ -172,6 +172,7 @@ RectTransform:
   - {fileID: 4817585546756724932}
   - {fileID: 8491926935512922011}
   - {fileID: 6139660660062698832}
+  - {fileID: 4526510995371761656}
   - {fileID: 8695684567901670070}
   - {fileID: 4375415176127235163}
   - {fileID: 807031517781002657}
@@ -203,7 +204,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 200}
+  m_CellSize: {x: 165, y: 165}
   m_Spacing: {x: 30, y: 30}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -229,6 +230,17 @@ MonoBehaviour:
   - {fileID: 6259765315548719975}
   - {fileID: 8516923972757758380}
   deadZone: 0.2
+  virtualKeyboardView: {fileID: 0}
+  previewText: {fileID: 0}
+  selectedWord: {fileID: 0}
+  currentVowel: 0
+  currentVowelType: 0
+  currentConsonantType: 0
+  Enter: {fileID: 0}
+  Space: {fileID: 0}
+  Backspace: {fileID: 0}
+  XRScheme: 0
+  PCScheme: 0
 --- !u!1 &2319706417976539347
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +643,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &3413680695946289384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4526510995371761656}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4526510995371761656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3413680695946289384}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -113.73236, y: 170.91937, z: 3.746447}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6421493625258463076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3588166600220937764
 GameObject:
   m_ObjectHideFlags: 0
@@ -4601,11 +4644,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3156507027810647622, guid: 3cfa843537c83df4b8cc0263cf2c2365, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 165
       objectReference: {fileID: 0}
     - target: {fileID: 3156507027810647622, guid: 3cfa843537c83df4b8cc0263cf2c2365, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 165
       objectReference: {fileID: 0}
     - target: {fileID: 3156507027810647622, guid: 3cfa843537c83df4b8cc0263cf2c2365, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4637,11 +4680,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3156507027810647622, guid: 3cfa843537c83df4b8cc0263cf2c2365, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 560
+      value: 472.5
       objectReference: {fileID: 0}
     - target: {fileID: 3156507027810647622, guid: 3cfa843537c83df4b8cc0263cf2c2365, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -560
+      value: -472.5
       objectReference: {fileID: 0}
     - target: {fileID: 3156507027810647622, guid: 3cfa843537c83df4b8cc0263cf2c2365, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

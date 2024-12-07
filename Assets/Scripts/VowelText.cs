@@ -18,6 +18,29 @@ public class VowelText : MonoBehaviour
     public TMP_Text line;
     public TMP_Text yi;
     public TMP_Text lineyi;
+
+    public TMP_Text PreviewLine;
+    public TMP_Text PreviewYi;
+    public TMP_Text PreviewLineYi;
+
+
+#if UNITY_EDITOR
+    public void OnValidate()
+    {
+        if (PreviewLine != null)
+        {
+            PreviewLine.text = line.text;
+        }
+        if (PreviewYi != null)
+        {
+            PreviewYi.text = yi.text;
+        }
+        if (PreviewLineYi != null)
+        {
+            PreviewLineYi.text = lineyi.text;
+        }
+    }
+#endif
     
     public VowelType currentType;
 
