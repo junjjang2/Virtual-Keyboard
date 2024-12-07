@@ -135,7 +135,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""Fortis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -157,7 +157,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/v"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""Aspirated"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -190,7 +190,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""SelectVowel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -201,7 +201,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""SelectVowel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -212,7 +212,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""SelectVowel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -223,7 +223,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""SelectVowel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -256,7 +256,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""line"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -278,7 +278,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/o"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""yi"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -289,7 +289,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""Tab"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -311,7 +311,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""Space"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -333,7 +333,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -344,7 +344,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/backspace"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""Delete"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -366,7 +366,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";PC"",
                     ""action"": ""Enter"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
