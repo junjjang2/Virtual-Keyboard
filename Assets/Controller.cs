@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
 {
@@ -57,7 +58,9 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     private const char ReturnText = '\n';
     
     public Action OnEnterAction;
-
+    
+    public bool XRScheme = false;
+    public bool PCScheme = false;
     public void Awake()
     {
         virtualKeyboard = new VirtualKeyboard();
@@ -65,6 +68,16 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         virtualKeyboard.Enable();
 
         virtualKeyboardView.text = "";
+
+        var schemes = "";
+        if(XRScheme) 
+            schemes += "XR";
+        if(PCScheme) 
+            schemes += "PC";
+        
+        if(XRScheme)
+            virtualKeyboard.bindingMask = new InputBinding { groups = schemes };
+
         // if PC
     #if UNITY_EDITOR_WIN
         words.ForEach(word => word.DeselectThis());
@@ -80,16 +93,11 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
         {
             return;
         }
-        
-        // switch (selectedWord)
-        // {
-        //     case var wrd when selectedWord == Enter:
-        //         return;
-        //     case var wrd when selectedWord == Space:
-        //         return;
-        //     case var wrd when selectedWord == Backspace:
-        //         return;
-        // }
+
+        if (selectedWord == Enter ||
+            selectedWord == Space ||
+            selectedWord == Backspace)
+            return;
         
         // 초성을 선택
         cho = selectedWord.consonant.CurrentText;
@@ -108,21 +116,21 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
     
     public void EnterWord()
     {
-        // switch (selectedWord)
-        // {
-        //     case var wrd when selectedWord == Enter:
-        //         OnEnterAction?.Invoke();
-        //         virtualKeyboardView.text += ReturnText;
-        //         ResetWord();
-        //         return;
-        //     case var wrd when selectedWord == Space:
-        //         virtualKeyboardView.text += ' ';
-        //         ResetWord();
-        //         return;
-        //     case var wrd when selectedWord == Backspace:
-        //         PopWord();
-        //         return;
-        // }
+        switch (selectedWord)
+        {
+            case var wrd when selectedWord == Enter:
+                OnEnterAction?.Invoke();
+                virtualKeyboardView.text += ReturnText;
+                ResetWord();
+                return;
+            case var wrd when selectedWord == Space:
+                virtualKeyboardView.text += ' ';
+                ResetWord();
+                return;
+            case var wrd when selectedWord == Backspace:
+                PopWord();
+                return;
+        }
         
         // 자음을 추가하는데 이전에 초성이랑 중성만 있으면 종성을 추가함
         var canAddJong = CanAddJong();
