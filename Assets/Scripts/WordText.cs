@@ -206,7 +206,6 @@ public class WordText : MonoBehaviour
     
     public void EnableAll()
     {
-        EnableConsonant(ConsonantType.Consonant);
         Wo.gameObject.SetActive(true);
         Wa.gameObject.SetActive(true);
         Ah.gameObject.SetActive(true);

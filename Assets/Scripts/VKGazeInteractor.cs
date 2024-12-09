@@ -33,15 +33,16 @@ public class VkGazeInteractor : MonoBehaviour
     {
         lineRenderer.SetPosition(0, transform.position);
 
-        lineRenderer.SetPosition(1, transform.forward * endPointDistance); 
-        endPoint.position = transform.position + transform.forward * endPointDistance;
+        lineRenderer.SetPosition(1, transform.position + transform.forward * maxDistance); 
+        endPoint.position = transform.position + transform.forward * maxDistance;
             
-        if (!Physics.Raycast(transform.position, transform.forward, out var hit, maxDistance, layers)) return;
+        if (!Physics.Raycast(transform.position, transform.forward, out var hit, maxDistance, layers)) 
+            return;
             
         var interactable = hit.collider.GetComponent<WordText>();
         if (interactable == null) return;
                 
-        lineRenderer.SetPosition(1, transform.position);
+        lineRenderer.SetPosition(1, interactable.transform.position - transform.forward * 0.1f);
         endPoint.position = interactable.transform.position - transform.forward * 0.1f;
             
         if(selectedWord != interactable)

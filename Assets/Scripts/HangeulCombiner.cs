@@ -26,7 +26,13 @@ public static class HangeulCombiner
             return cho;
         }
 
-        if (choIndex == -1 || jongIndex == -1)
+        if (choIndex == -1)
+        {
+            throw new ArgumentException("Invalid Hangul character");
+            return ' ';
+        }
+        
+        if (jongIndex == -1)
         {
             return ' ';
         }

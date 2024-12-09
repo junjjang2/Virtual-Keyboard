@@ -146,7 +146,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<XRController>{LeftHand}/{TriggerButton}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";XR"",
+                    ""groups"": """",
                     ""action"": ""Fortis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -168,7 +168,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<XRController>{LeftHand}/{GripButton}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";XR"",
+                    ""groups"": """",
                     ""action"": ""Aspirated"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -234,7 +234,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<XRController>{RightHand}/{Primary2DAxis}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";XR"",
+                    ""groups"": """",
                     ""action"": ""SelectVowel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -245,7 +245,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<XRController>{RightHand}/{GripButton}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";XR"",
+                    ""groups"": """",
                     ""action"": ""line"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -267,7 +267,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<XRController>{RightHand}/{TriggerButton}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";XR"",
+                    ""groups"": """",
                     ""action"": ""yi"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -300,7 +300,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<XRController>{LeftHand}/{SecondaryButton}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";XR"",
+                    ""groups"": """",
                     ""action"": ""Space"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -322,7 +322,7 @@ public partial class @VirtualKeyboard: IInputActionCollection2, IDisposable
                     ""path"": ""<XRController>{LeftHand}/{PrimaryButton}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";XR"",
+                    ""groups"": """",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

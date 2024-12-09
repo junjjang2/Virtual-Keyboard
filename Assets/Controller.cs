@@ -124,7 +124,7 @@ public class Controller : MonoBehaviour, VirtualKeyboard.IEyeFlickActions
                 ResetWord();
                 return;
             case var wrd when selectedWord == Space:
-                virtualKeyboardView.text += ' ';
+                virtualKeyboardView.text += " ";
                 ResetWord();
                 return;
             case var wrd when selectedWord == Backspace:
