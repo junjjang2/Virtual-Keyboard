@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Flags]
 public enum VowelType
@@ -14,6 +15,7 @@ public enum VowelType
 
 public class VowelText : MonoBehaviour
 {
+    public Image image;
     public TMP_Text vowel;
     public TMP_Text line;
     public TMP_Text yi;
@@ -96,5 +98,15 @@ public class VowelText : MonoBehaviour
         line.gameObject.SetActive(false);
         yi.gameObject.SetActive(false);
         lineyi.gameObject.SetActive(false);
+    }
+
+    public void Dim()
+    {
+        image.color = Color.gray;
+    }
+    
+    public void Bright()
+    {
+        image.color = new Color(1f, 0.98f, 0.6f, 1f);
     }
 }

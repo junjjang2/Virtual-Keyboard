@@ -968,7 +968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7052009652707099704, guid: bf0b248936845a041b2ad426cc5d4163, type: 3}
       propertyPath: currentWord
-      value: 52
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7133987398792993039, guid: bf0b248936845a041b2ad426cc5d4163, type: 3}
       propertyPath: m_hasFontAssetChanged

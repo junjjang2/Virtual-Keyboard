@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,7 +38,11 @@ public class WordText : MonoBehaviour
     [Header("기본자")]
     public VowelText Yi; // ㅣ
     public VowelText Line; // ㅡ
-    
+
+
+    [Header("UI")]
+    public Image placeHolde_LT;
+    public Image placeHolde_RB;
     
     public Image image;
 
@@ -70,8 +76,14 @@ public class WordText : MonoBehaviour
         }
     }
 
-    public char currentWord;
-    
+    public GameObject currentWordParent;
+    public TMP_Text currentWord;
+
+    public void Start()
+    {
+        currentWord = currentWordParent.GetComponentInChildren<TMP_Text>();
+    }
+
     public void Update()
     {
         var cons = consonant.CurrentText;
@@ -80,11 +92,11 @@ public class WordText : MonoBehaviour
         
         if (combined != cons)
         {
-            currentWord = combined;
+            currentWord.text = combined.ToString();
         }
         else
         {
-            currentWord = cons;
+            currentWord.text = cons.ToString();
         }
     }
 
@@ -92,6 +104,7 @@ public class WordText : MonoBehaviour
     {
         Controller.Instance.selectedWord = this;
         image.color = Color.white;
+        EnableAll();
     }
 
     public void DeselectThis()
@@ -132,48 +145,54 @@ public class WordText : MonoBehaviour
     {
         currentVowel = select;
         
-        Wo.gameObject.SetActive(false);
-        Wa.gameObject.SetActive(false);
-        Ah.gameObject.SetActive(false);
-        Oh.gameObject.SetActive(false);
-        Oo.gameObject.SetActive(false);
-        Uh.gameObject.SetActive(false);
+        Wo.Dim(); //.gameObject.SetActive(false);
+        Wa.Dim(); //.gameObject.SetActive(false);
+        Ah.Dim(); //.gameObject.SetActive(false);
+        Oh.Dim(); //.gameObject.SetActive(false);
+        Oo.Dim(); //.gameObject.SetActive(false);
+        Uh.Dim(); //.gameObject.SetActive(false);
         
+        Line.Dim(); //.gameObject.SetActive(false);
         Line.gameObject.SetActive(false);
+        Yi.Dim(); //.gameObject.SetActive(false);
         Yi.gameObject.SetActive(false);
+        LineYi.Dim(); //.gameObject.SetActive(false);
         LineYi.gameObject.SetActive(false);
         
         switch (select)
         {
             case VowelSelect.wo:
-                Wo.gameObject.SetActive(true);
+                Wo.Bright(); //.gameObject.SetActive(true);
                 break;
             case VowelSelect.wa:
-                Wa.gameObject.SetActive(true);
+                Wa.Bright(); //.gameObject.SetActive(true);
                 break;
             case VowelSelect.a:
-                Ah.gameObject.SetActive(true);
+                Ah.Bright(); //.gameObject.SetActive(true);
                 break;
             case VowelSelect.oh:
-                Oh.gameObject.SetActive(true);
+                Oh.Bright(); //.gameObject.SetActive(true);
                 break;
             case VowelSelect.oo:
-                Oo.gameObject.SetActive(true);
+                Oo.Bright(); //.gameObject.SetActive(true);
                 break;
             case VowelSelect.uh:
-                Uh.gameObject.SetActive(true);
+                Uh.Bright(); //.gameObject.SetActive(true);
                 break;
             default:
                 switch (currentVowelType)
                 {
                     case VowelType.Line:
                         Line.gameObject.SetActive(true);
+                        Line.Bright(); //.gameObject.SetActive(true);
                         break;
                     case VowelType.Yi:
                         Yi.gameObject.SetActive(true);
+                        Yi.Bright(); //.gameObject.SetActive(true);
                         break;
                     case VowelType.LineYi:
                         LineYi.gameObject.SetActive(true);
+                        LineYi.Bright(); //.gameObject.SetActive(true);
                         break;
                 }
                 break;
@@ -194,6 +213,15 @@ public class WordText : MonoBehaviour
         Oh.gameObject.SetActive(true);
         Oo.gameObject.SetActive(true);
         Uh.gameObject.SetActive(true);
+        // Line.gameObject.SetActive(true);   
+        // Yi.gameObject.SetActive(true);
+        // LineYi.gameObject.SetActive(true);
+        
+        currentWordParent.gameObject.SetActive(true);
+        
+        placeHolde_LT.gameObject.SetActive(true);
+        placeHolde_RB.gameObject.SetActive(true);
+        
     }
 
     public void DisableAll()
@@ -208,5 +236,10 @@ public class WordText : MonoBehaviour
         Line.gameObject.SetActive(false);   
         Yi.gameObject.SetActive(false);
         LineYi.gameObject.SetActive(false);
+        
+        currentWordParent.gameObject.SetActive(false);
+        
+        placeHolde_LT.gameObject.SetActive(false);
+        placeHolde_RB.gameObject.SetActive(false);
     }
 }
