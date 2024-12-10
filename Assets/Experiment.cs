@@ -1,4 +1,5 @@
 using System.IO;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -121,10 +122,12 @@ public class Experiment : MonoBehaviour
 
     private void EndExperiment()
     {
+        OnInputEnd(controller.virtualKeyboardView.text.Trim());
+        
         _endTime = Time.time;
         float timeTaken = _endTime - _startTime; // 초 단위
-        // 분당 단어수
-        float wpm = (float)_totalInputChars / 5 / (timeTaken / 60f);
+        // 분당 글자수
+        float cpm = (float)_totalInputChars / (timeTaken / 60f);
         
         // 오류율
         float errorRate = 100;
@@ -134,43 +137,45 @@ public class Experiment : MonoBehaviour
             errorRate = (float)_totalErrors / _totalInputChars * 100f;
 
         _isExperimentRunning = false;
-        _resultText = $"WPM: {wpm:F2}\n오류율: {errorRate:F2}%";
+        _resultText = $"CPM: {cpm:F2}\n오류율: {errorRate:F2}%";
         currentSentenceText.text = "";
         timerText.text = "0:00";
         Debug.Log(_resultText);
 
-        SaveResult(wpm, errorRate);
+        SaveResult(cpm, errorRate);
     }
 
     private void SaveInput(string input, float timeStamp)
     {
-        var filePath = Path.Combine(Application.persistentDataPath, $"inputs_{_startTime}.csv");
-        
+        var filePath = $"{Application.dataPath}/inputs_{_startTime}.txt";
+        Encoding encoding = Encoding.GetEncoding(949);
         // 첫 실행 시 헤더 작성
         if (!File.Exists(filePath))
         {
             string header = "timeStamp, input\n";
-            File.WriteAllText(filePath, header);
+            File.Create(filePath).Dispose();
+            File.WriteAllText(filePath, header, encoding);
         }
         
         string data = $"{timeStamp},{input}\n";
-        File.AppendAllText(filePath, data);
+        File.AppendAllText(filePath, data, encoding);
     }
 
-    private void SaveResult(float wpm, float errorRate)
+    private void SaveResult(float cpm, float errorRate)
     {
-        var filePath = Path.Combine(Application.persistentDataPath, $"results_{_startTime}.csv");
+        var filePath = Path.Combine(Application.dataPath, $"results_{_startTime}.txt");
         // var delimiter = ",";
-        
+        Encoding encoding = Encoding.GetEncoding(949);
+
         // 첫 실행 시 헤더 작성
         if (!File.Exists(filePath))
         {
-            string header = "SentenceIndex,Sentence,WPM,ErrorRate\n";
-            File.WriteAllText(filePath, header);
+            string header = "SentenceIndex,Sentence,CPM,ErrorRate\n";
+            File.WriteAllText(filePath, header, encoding);
         }
         
-        string data = $"{_currentSentenceIndex},{_currentSentence},{wpm:F2},{errorRate:F2}\n";
-        File.AppendAllText(filePath, data);
+        string data = $"{_currentSentenceIndex},{_currentSentence},{cpm:F2},{errorRate:F2}\n";
+        File.AppendAllText(filePath, data, encoding);
     }
 
     public void RunExperiment()
