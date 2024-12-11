@@ -1,0 +1,2 @@
+SentenceIndex,Sentence,CPM,ErrorRate
+8,봄비가 잦으면 마을 집 지어미 손이 크다,14.80,5.41

@@ -1,0 +1,2 @@
+SentenceIndex,Sentence,CPM,ErrorRate
+13,콧구멍이 둘이니 숨을 쉬지,32.80,35.37

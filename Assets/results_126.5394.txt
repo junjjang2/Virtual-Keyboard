@@ -1,0 +1,2 @@
+SentenceIndex,Sentence,CPM,ErrorRate
+4,걷기도 전에 뛰려고 한다,7.40,2.70

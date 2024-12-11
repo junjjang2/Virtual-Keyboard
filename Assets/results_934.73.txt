@@ -1,0 +1,2 @@
+SentenceIndex,Sentence,CPM,ErrorRate
+10,사내아이가 열다섯이면 호패를 찬다,15.20,69.74
